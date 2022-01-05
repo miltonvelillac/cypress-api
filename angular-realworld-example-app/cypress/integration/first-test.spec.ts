@@ -75,7 +75,7 @@ describe('Test with backend', () => {
         cy.get('app-article-list button').eq(1).click();
     });
 
-    it.only(`Delete a new article`, () => {
+    it(`Delete a new article`, () => {
         const articleTitle = `Article ${new Date().getTime()}`;
         const bodyRequest = {
             "article": {
@@ -91,7 +91,7 @@ describe('Test with backend', () => {
 
         cy.get('@token').then(token => {
             cy.request({
-                url: 'https://api.realworld.io/api/articles/',
+                url: `${Cypress.env('apiUrl')}api/articles/`,
                 headers: {
                     'Authorization': `Token ${token}`
                 },
@@ -108,7 +108,7 @@ describe('Test with backend', () => {
             cy.wait(500);
 
             cy.request({
-                url: 'https://api.realworld.io/api/articles?limit=10&offset=0',
+                url: `${Cypress.env('apiUrl')}api/articles?limit=10&offset=0`,
                 headers: {
                     'Authorization': `Token ${token}`
                 },
