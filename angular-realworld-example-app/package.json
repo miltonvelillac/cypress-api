@@ -10,7 +10,8 @@
     "lint": "ng lint --force",
     "e2e": "ng e2e",
     "cypress:run": "npx cypress run",
-    "cypress:e2e": "start-test start http-get://localhost:4200 cypress:run"
+    "cypress:e2e": "start-test start http-get://localhost:4200 cypress:run",
+    "cypress:run:qa": "npx cypress open --env configFile=qa"
   },
   "pre-commit": [
     "lint"

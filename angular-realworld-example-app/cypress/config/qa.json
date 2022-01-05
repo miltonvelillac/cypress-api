@@ -1,0 +1,7 @@
+{
+    "env": {
+        "username": "cypress.tester@gmail.com",
+        "password": "Test1234",
+        "apiUrl": "https://api.realworld.io/"
+    }
+}
